@@ -1,0 +1,16 @@
+#actions templete
+name: 'actions-template'
+description: 'Automate Versions'
+inputs:
+
+  sample:  # id of input
+    description: 'Who to greet'
+    required: false
+
+outputs:
+  sample: # id of output
+    description: 'The time we greeted you'
+ 
+runs:
+  using: 'node16'
+  main: 'dist/index.js'

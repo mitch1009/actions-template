@@ -1,0 +1,47 @@
+{
+  "name": "actionstemplate",
+  "version": "1.0.0",
+  "description": "Made In Malawi  🇲🇼",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo Welcome to $npm_package_name v$npm_package_version",
+    "commit": "npm run  build && git commit -m",
+    "push:plain": "git push --follow-tags",
+    "delocal": "git ls-remote --tags --refs origin | cut -f2 | xargs git push origin --delete ",
+    "delremote": "npm run push && git ls-remote --tags --refs origin | cut -f2 | xargs git push origin --delete ",
+    "del": "node retag.js",
+    "build": "ncc build index.js --license licenses.txt && git add .",
+    "push": "npm run delocal && npm run del &&  git pull ",
+    "tags": "git tag -a -m \" v$npm_package_version automated deployment $npm_package_time\" v$npm_package_version  && git push --follow-tags && echo $npm_version_added",
+    "newTag": "git tag -a -m \" v$npm_package_version automated deployment $npm_package_time\" v$npm_package_version",
+    "followTags": "git push --follow-tags",
+    "sample": "echo hello $npm_package_author_name, your commut is complete",
+    "lt": "git ls-remote --tags origin",
+    "ts": "tsc -w && npm run  build",
+    "fun": "times=$(date \"+%d-%m-%Y:%H:%M\") && echo Welcome to $npm_package_name - $npm_package_description :feelsgood: $times"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:mitch1009/actions-template.git"
+  },
+  "keywords": [],
+  "author": {
+    "name": "Mitch Chanza",
+    "email": "mitch.chanza@gmail.com"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mitch1009/actions-template/issues"
+  },
+  "homepage": "https://github.com/mitch1009/actions-template#readme",
+  "dependencies": {
+    "@actions/core": "^1.6.0",
+    "@actions/github": "^5.0.0",
+    "@types/nodemailer": "^6.4.4",
+    "nodemailer": "^6.7.2"
+  },
+  "devDependencies": {
+    "package.json": "^2.0.1",
+    "typescript": "^4.6.2"
+  }
+}
