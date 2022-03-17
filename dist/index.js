@@ -7,7 +7,7 @@
 /************************************************************************/
 var __webpack_exports__ = {};
 
-/** initialize your main app function here */ 
+/** initialize your main app function here. all updates wii be watched and compiled by tsc*/
 //# sourceMappingURL=index.js.map
 module.exports = __webpack_exports__;
 /******/ })()
