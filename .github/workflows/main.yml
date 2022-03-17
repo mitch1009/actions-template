@@ -1,5 +1,5 @@
   # Sample Actions workflow for the template
-  name: Template CI
+  name: Actions Template
   on:
     push:
       branches:
